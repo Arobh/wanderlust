@@ -1,6 +1,6 @@
 {
    "version": 2,
-   "name": "wonderlust",
+   "name": "Arobnb",
    "builds": [
       { "src": "app.js", "use": "@vercel/node" }
    ],

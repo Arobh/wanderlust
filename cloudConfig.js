@@ -11,7 +11,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "Wonderlust_DEV",
+    folder: "Arobnb_DEV",
     format: async (req, file) => {
       // Check file extension and return format accordingly
       const fileExtension = file.originalname.split(".").pop();
