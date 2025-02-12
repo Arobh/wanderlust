@@ -1,120 +1,92 @@
 <% layout('/layouts/boilerplate') -%>
 
-    <body>
-        <nav class="navbar navbar-expand-lg sticky-top ">
-            <div class="container ">
-                <div class="justify-content-start">
-        
-                    <div class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas1" aria-controls="offcanvas1" aria-label="Toggle navigation">
-                        <span class="fw-bold"><i class="fa-solid fa-filter fa-sm"></i>Filter</span>
-                    </div>
-        
-                    <!-- Offcanvas Filter Sidebar -->
-                    <div class="offcanvas offcanvas-start custom-offcanvas-width" style="width:125px;" tabindex="-1" id="offcanvas1" aria-labelledby="#offcanvasLabel1">
-        
-                        <div class="offcanvas-header mt-5 pt-5">
-                            <span class="offcanvas-title fw-bold" id="#offcanvasLabel"><i class="fa-solid fa-filter fa-sm"></i>Filters</span>
-                            <button type="button" class="btn-close btn-close-gray" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-        
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav text-nowrap">
-                                <li class="nav-item">
-                                    <div class="filters">
-                                        <i class="fa-solid fa-fire"></i>
-                                        <p>Trendings</p>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <div class="filters">
-                                        <i class="fa-solid fa-mountain-city"></i>
-                                        <p>Iconic Cities</p>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <div class="filters">
-                                        <i class="fa-solid fa-mountain"></i>
-                                        <p>Mountain</p>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <div class="filters">
-                                        <i class="fa-brands fa-fort-awesome"></i>
-                                        <p>Castles</p>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <div class="filters">
-                                        <i class="fa-solid fa-person-swimming"></i>
-                                        <p>Amazing Pools</p>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <div class="filters">
-                                        <i class="fa-solid fa-campground"></i>
-                                        <p>Camping</p>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <div class="filters">
-                                        <i class="fa-solid fa-cow"></i>
-                                        <p>Farms</p>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <div class="filters">
-                                        <i class="fa-solid fa-snowflake"></i>
-                                        <p>Arctic</p>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <div class="filters">
-                                        <i class="fa-solid fa-city"></i>
-                                        <p>City</p>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <div class="filters">
-                                        <i class="fa-solid fa-umbrella-beach"></i>
-                                        <p>Beach</p>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <div class="filters">
-                                        <i class="fa-solid fa-sailboat"></i>
-                                        <p>Boats</p>
-                                    </div>
-                                </li>
-                            </ul>
-        
-                        </div>
-                    </div>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top ">
+        <div class="container ">
+            <div class="justify-content-start">
+
+                <div class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas1"
+                    aria-controls="offcanvas1" aria-label="Toggle navigation">
+                    <span class="fw-bold"><i class="fa-solid fa-filter fa-sm"></i>Filter</span>
                 </div>
-        
-                <!-- Toggle Display Taxes -->
-                <div class="justify-content-end tax-toggle form-check form-switch form-check-reverse ps-3 pe-5 text-nowrap">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckReverse">
-                    <label class="form-check-label" for="flexSwitchCheckReverse">Display total taxes</label>
+
+                <!-- Offcanvas Filter Sidebar -->
+                <div class="offcanvas offcanvas-start custom-offcanvas-width" style="width:125px;" tabindex="-1" id="offcanvas1" aria-labelledby="#offcanvasLabel1">
+
+                    <div class="offcanvas-header mt-5 pt-5">
+                        <span class="offcanvas-title fw-bold" id="#offcanvasLabel"><i class="fa-solid fa-filter fa-sm"></i>Filters</span>
+                        <button type="button" class="btn-close btn-close-gray" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav text-nowrap">
+                            <li class="nav-item">
+                                <div class="filters">
+                                    <i class="fa-solid fa-fire"></i>
+                                    <p>Trendings</p>
+                                </div>
+                            </li>
+                            <!-- Add more filter items as necessary -->
+                        </ul>
+
+                    </div>
                 </div>
             </div>
-        </nav>
 
-       
-        <div id="allcards" class="cards row-col-lg-6">
-            <% for( let list of lists ) { %>
-                <a href="/listings/<%= list.id %>">
-                    <div class="card rounded-3 m-3 " style="width: 18rem; height: 18rem;">
-                        <img style="height: 12rem;" src="<%= list.image.url %>" class="card-img-top rounded-2"
-                            alt="...">
-                        <div class="card-body">
-                            <b class="card-text">
-                                <%= list.title %>
-                            </b>
-                            <p class="card-text">&#8377; <%= list.price.toLocaleString("en-IN") %>/ night <i
-                                        class="tax"> + 18% GST</i></p>
-                        </div>
-                    </div>
-                </a>
-                <% } %>
+            <!-- Toggle Display Taxes -->
+            <div class="justify-content-end tax-toggle form-check form-switch form-check-reverse ps-3 pe-5 text-nowrap">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckReverse">
+                <label class="form-check-label" for="flexSwitchCheckReverse">Display total taxes</label>
+            </div>
         </div>
-    </body>
+    </nav>
+
+    <!-- Card Listings -->
+    <div id="allcards" class="cards row-col-lg-6">
+        <% for( let list of lists ) { %>
+            <a href="/listings/<%= list.id %>">
+                <div class="card rounded-3 m-3" style="width: 18rem; height: 18rem;">
+                    <img style="height: 12rem;" src="<%= list.image.url %>" class="card-img-top rounded-2" alt="...">
+                    <div class="card-body">
+                        <b class="card-text">
+                            <%= list.title %>
+                        </b>
+                        <p class="card-text">
+                            &#8377; <%= list.price.toLocaleString("en-IN") %>/ night
+                            <span class="tax" style="display:none;"> + 18% GST</span>
+                        </p>
+                    </div>
+                </div>
+            </a>
+        <% } %>
+    </div>
+
+    <!-- JavaScript to Toggle Taxes Display -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the checkbox element
+            const taxToggleCheckbox = document.getElementById('flexSwitchCheckReverse');
+            
+            // Function to toggle the display of tax
+            function toggleTaxes() {
+                const taxes = document.querySelectorAll('.tax');
+                if (taxToggleCheckbox.checked) {
+                    taxes.forEach(function(tax) {
+                        tax.style.display = 'inline'; // Show the tax text
+                    });
+                } else {
+                    taxes.forEach(function(tax) {
+                        tax.style.display = 'none'; // Hide the tax text
+                    });
+                }
+            }
+
+            // Initialize the tax display when the page loads
+            toggleTaxes(); // Set the initial state based on checkbox
+
+            // Add an event listener for the checkbox change
+            taxToggleCheckbox.addEventListener('change', toggleTaxes);
+        });
+    </script>
+
+</body>

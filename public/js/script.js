@@ -30,18 +30,7 @@ const popoverList = [...popoverTriggerList].map(
   });
 })();
 
-// tax switch
-let taxSwitch = document.querySelector("#flexSwitchCheckReverse");
-taxSwitch.addEventListener("click", () => {
-  let taxInfo = document.querySelectorAll(".tax");
-  for (info of taxInfo) {
-    if (info.style.display != "inline") {
-      info.style.display = "inline";
-    } else {
-      info.style.display = "none";
-    }
-  }
-});
+
 
 
     const themeToggle = document.getElementById("theme-toggle"); // Targeting the button
@@ -83,4 +72,20 @@ taxSwitch.addEventListener("click", () => {
             themeToggle.innerHTML = "🌙"; // Change the icon to dark mode
         }
     });
+
+    // Get the sidebar and toggle button
+const sidebar = document.querySelector('.sidebar');
+const sidebarToggle = document.querySelector('#sidebar-toggle');
+
+// Add event listener to the toggle button
+sidebarToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('open'); // Toggle 'open' class to slide it in/out
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.fade-in').forEach(element => {
+      element.classList.add('fade-in');
+  });
+});
+
 
