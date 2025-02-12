@@ -1,10 +1,10 @@
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
 }
 
-html,
-body {
+html, body {
     font-family: "Plus Jakarta Sans", sans-serif;
     width: 100%;
     height: 100%;
@@ -53,10 +53,9 @@ main {
     transform: scale(1.05);
 }
 
-
- /* Footer Styling */
- .footer {
-    background-color: #f2f2f2;  
+/* Footer Styling */
+.footer {
+    background-color: #f2f2f2;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -67,33 +66,31 @@ main {
     text-decoration: none;
     font-size: 18px;
     margin: 0 10px;
-    transition: color 0.3s ease-in-out;
     font-weight: bold;
+    transition: color 0.3s ease-in-out;
 }
 
 .footer a:hover {
-    color: #000000; 
-    font-weight: bold;
+    color: #000000;
 }
 
 .social-icons a {
     font-size: 24px;
 }
 
-/* Responsive: Align items properly on small screens */
+/* Responsive Styling */
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
         text-align: center;
     }
-
     .social-icons {
         margin-bottom: 10px;
     }
 }
 
 #form li {
-    margin: 5px 0px;
+    margin: 5px 0;
 }
 
 img {
@@ -109,7 +106,7 @@ a {
 }
 
 .filters {
-    margin: 0px 8px 0px;
+    margin: 0 8px;
     text-align: center;
     cursor: pointer;
     opacity: 0.8;
@@ -132,27 +129,26 @@ a {
 }
 
 .tax-toggle {
-    border: solid 1.5px gray;
+    border: 1.5px solid gray;
     border-radius: 12px;
     height: 2.8rem;
     color: rgb(73, 72, 72);
     font-size: 13px;
-    padding: 10px 0px 0px 0px;
+    padding-top: 10px;
     margin-bottom: 1rem;
-
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
 .tax-toggle:hover {
     background-color: #f2f2f2;
     border-color: black;
-
 }
 
 #search-btn {
     background-color: #FF5A5F;
 }
 
-.navbar-toggler{
+.navbar-toggler {
     border: none;
 }
 
@@ -162,10 +158,142 @@ a {
     }
 }
 
-
-#logForm{
+#logForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+/* Dark & Light Mode */
+[data-bs-theme="dark"] {
+    background-color: #121212 !important;
+    color: white !important;
+}
+
+[data-bs-theme="light"] {
+    background-color: white !important;
+    color: black !important;
+}
+
+footer {
+    background-color: #f8f9fa;
+    color: black;
+}
+
+[data-bs-theme="dark"] footer {
+    background-color: #121212;
+    color: white;
+}
+
+[data-bs-theme="dark"] .social-icons a,
+[data-bs-theme="dark"] footer .company a,
+[data-bs-theme="dark"] footer .term a {
+    color: white;
+}
+
+[data-bs-theme="light"] .social-icons a,
+footer .company a,
+footer .term a {
+    color: black;
+}
+
+[data-bs-theme="dark"] footer .logo-icon {
+    fill: white;
+}
+
+[data-bs-theme="light"] footer .logo-icon {
+    fill: black;
+}
+
+footer .social-icons a:hover {
+    color: #FF5A5F;
+}
+
+[data-bs-theme="dark"] input,
+[data-bs-theme="dark"] textarea,
+[data-bs-theme="dark"] select {
+    background-color: #333 !important;
+    color: white !important;
+    border: 1px solid #555 !important;
+}
+
+[data-bs-theme="dark"] input::placeholder,
+[data-bs-theme="dark"] textarea::placeholder {
+    color: #bbb !important;
+}
+
+[data-bs-theme="dark"] .btn-outline-secondary {
+    border-color: white !important;
+    color: white !important;
+}
+
+[data-bs-theme="dark"] .btn-outline-secondary:hover {
+    background-color: white !important;
+    color: black !important;
+}
+
+
+.navbar-toggler span {
+    color: var(--bs-body-color); /* Uses Bootstrap's default text color */
+}
+
+.offcanvas-title {
+    color: var(--bs-body-color); /* Ensures text color adapts in dark mode */
+}
+
+.filters p {
+    color: var(--bs-body-color); /* Adjusts text color based on Bootstrap theme */
+}
+
+/* If the issue persists, manually set colors */
+[data-bs-theme="dark"] .navbar-toggler span,
+[data-bs-theme="dark"] .offcanvas-title,
+[data-bs-theme="dark"] .filters p {
+    color: white !important; /* Ensures visibility in dark mode */
+}
+
+
+/* Ensure text and icons adapt to Bootstrap themes */
+.navbar-toggler span,
+.offcanvas-title,
+.filters p,
+.filters i {
+    color: var(--bs-body-color); /* Uses Bootstrap's adaptive text color */
+}
+
+/* Explicitly set colors for dark mode */
+[data-bs-theme="dark"] .navbar-toggler span,
+[data-bs-theme="dark"] .offcanvas-title,
+[data-bs-theme="dark"] .filters p,
+[data-bs-theme="dark"] .filters i {
+    color: white !important; /* Ensures visibility in dark mode */
+}
+
+
+/* Example: remove underline from AROBNB header link */
+#header a {
+    text-decoration: none;
+}
+
+/* Example: remove underline from listing titles */
+.listing-title a {
+    text-decoration: none;
+}
+/* Remove underlines from specific areas */
+header a,
+.listing-title a {
+    text-decoration: none !important;
+}
+/* Remove underline from all text */
+* {
+    text-decoration: none !important;
+}
+
+.bg-dark {
+    background-color: #343a40 !important; /* Dark background */
+}
+
+.bg-light {
+    background-color: #f8f9fa !important; /* Light background */
 }
