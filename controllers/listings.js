@@ -124,22 +124,28 @@ module.exports.searchListings = async (req, res) => {
   try {
     let query = {};
     if (req.query.location) {
-      const firstWord = req.query.location.split(" ")[0];
-      query["location.name"] = new RegExp("^" + firstWord + "\\b", "i");
+      const searchString = req.query.location.trim();
+      query["location.name"] = new RegExp(searchString, "i"); // Matches anywhere in the location name
 
       const lists = await Listing.find(query).sort({ "location.name": 1 });
+
       if (lists.length > 0) {
         res.render("listings/index.ejs", { lists });
       } else {
-        req.flash("error", "Location not found or Please recheck spellings");
+        req.flash("error", "No matching locations found. Please check your spelling.");
         res.redirect("/listings");
       }
+    } else {
+      req.flash("error", "Please enter a location to search.");
+      res.redirect("/listings");
     }
   } catch (err) {
     console.error(err);
     res.status(500).send("Server Error");
   }
 };
+
+
 
 module.exports.filterListings = async (req, res) => {
   try {

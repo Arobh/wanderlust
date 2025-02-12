@@ -98,7 +98,7 @@ app.use("/", userRouter);
 app.all("*", (req, res, next) => {
   next(new ExpressError(404, "Page Not Found !!"));
 });
-// return error status and message
+// return error  status and message
 app.use((err, req, res, next) => {
   let { statusCode = 500, message = "Somthing Went Wrong !!" } = err;
   res.render("error.ejs", { statusCode, message });
@@ -107,4 +107,4 @@ app.use((err, req, res, next) => {
 app.listen(8080, () => {
   console.log("Server is listening to port 8080");
 });
-        
+         

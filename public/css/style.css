@@ -1,6 +1,6 @@
 * {
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
 }
 
 html,
@@ -53,29 +53,6 @@ main {
     transform: scale(1.05);
 }
 
-/* .company {
-    font-weight: 600;
-    font-size: medium;
-}
-
-.footer {
-    width: 100%;
-    height: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: larger;
-}
-
-.footer a {
-    margin: 5px;
-    color: black;
-}
-
-.social a :hover {
-    transition-duration: 0.2s;
-    font-size: x-large;
-} */
 
  /* Footer Styling */
  .footer {
